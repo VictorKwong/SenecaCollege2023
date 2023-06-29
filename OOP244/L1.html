@@ -20,14 +20,64 @@
         </blockquote>
     </div>
     <div>
-        <p>Encapsulation</p>
-        <p>The cout is storing the object data in memory and also controlling how it flows from the data</p>
-        <p><< sign work as a wrapper, it encapsulate the information to the cout without exposing any sort of implementation details</p>
-        <blockquote>
-            <b>Consider the example🔰</b><br><br>
-            cout << "Printing Statement";
-        </blockquote>
-        <p><b>Does:</b> To make sure client only sees the simple output to the object without showing any further internal data</p>
+        <h3>3 Important Concept for Object-oriented programming language</h3>
+        <div>
+            <p>1. Encapsulation</p>
+            <p>The cout is storing the object data in memory and also controlling how it flows from the data</p>
+            <p><< sign work as a wrapper, it encapsulate the information to the cout without exposing any sort of implementation details</p>
+            <blockquote>
+                <b>Consider the example🔰</b><br><br>
+                cout << "Printing Statement";
+            </blockquote>
+            <p><b>Does:</b> To make sure client only sees the simple output to the object without showing any further internal data</p>
+        </div>
+        <div>
+            <p>2. Inheritance</p>
+            <p>Inheritance appears when there are two class A and B, where class A is a domain class and class B is a derived class.</p>
+            <blockquote>
+                <b>Example Image🔰</b><br>
+                Class A(super or base class) 👉 Class B(Sub or derived class)
+            </blockquote>
+        </div>
+        <div>
+            <p>3. Polymorphism</p>
+            <p>Polymorphism appears when the function or methods that needs to change at compile-time(overloading) or run-time(overriding)</p>
+            <p>Always starts with compiling the code first, entering the compilation phase to check if have any uninitialized var. Next starts the execution of the program, which find some not allow procedures or undefined result.</p>
+
+            <blockquote>
+                <b>Example Image🔰</b><br>
+                Class A{ //base class A<br>
+                    &emsp;int a,b;<br>
+                public:<br>
+                &emsp;void change(int varA){ <br>
+                    &emsp;&emsp;a = varA;<br>
+                    &emsp;} <br>
+                    &emsp;void change(int varA, varB){ <br>
+                        &emsp;&emsp;a = varA;<br>
+                        &emsp;&emsp;b = varB;<br>
+                    &emsp;} <br>
+                    &emsp;void info(){ <br>
+                        &emsp;&emsp;cout << "Class A information" << endl; <br>
+                        &emsp;} <br>
+                } <br><br>
+                Class B : Public A{ //derived class B<br>
+                Public: <br>
+                &emsp;void info(){ <br>
+                    &emsp;&emsp;cout << "Class B information" << endl; <br>
+                    &emsp;} <br>
+                } <br>
+                <br>
+                int main(){ <br>
+                    &emsp;A exampleA; <br>
+                    &emsp;A.change(1); //change a = 1; <br>
+                    &emsp;A.change(2,3); //change a = 2, b = 3; <br>
+                    &emsp;B exampleB; <br>
+                    &emsp;A.info(); //prints: Class A information <br>
+                    &emsp;B.info(); //overriding, prints: Class B information <br>
+                    &emsp;return 0; <br>
+                } <br>
+            </blockquote>
+        </div>
 
     </div>
 </body>
