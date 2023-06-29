@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP244 - Lecture 1</title>
+</head>
+<body>
+    <div>
+        <h3>3 Parts of compilation, in sequence</h3>
+        <p>1. Processor: All #include header files, #define macros</p>
+        <p>2. Complier: Make each of .cpp to a translation unit, make it like a package first</p>
+        <p>3. Linker: Convert the translation unit to system binaries, and then make it as ONE big complex executable binary version</p>
+        <blockquote>
+            <b>Example Image🔰</b><br><br>
+            main.cpp 👉 main unit<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;👉executable binary version<br>
+            book.cpp 👉 book unit<br><br>
+            Processor👉 Complier 👉 Linker 
+        </blockquote>
+    </div>
+    <div>
+        <p>Encapsulation</p>
+        <p>The cout is storing the object data in memory and also controlling how it flows from the data</p>
+        <p><< sign work as a wrapper, it encapsulate the information to the cout without exposing any sort of implementation details</p>
+        <blockquote>
+            <b>Consider the example🔰</b><br><br>
+            cout << "Printing Statement";
+        </blockquote>
+        <p><b>Does:</b> To make sure client only sees the simple output to the object without showing any further internal data</p>
+
+    </div>
+</body>
+</html>
