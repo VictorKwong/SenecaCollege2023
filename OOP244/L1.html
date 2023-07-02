@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OOP244 - Lecture 1</title>
+    <!-- <link rel="stylesheet" href="../style/oop.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.js"></script>
+
 </head>
 <body>
     <div>
@@ -16,7 +20,7 @@
             main.cpp 👉 main unit<br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;👉executable binary version<br>
             book.cpp 👉 book unit<br><br>
-            Processor👉 Complier 👉 Linker 
+            Processor👉 Complier 👉 Linker
         </blockquote>
     </div>
     <div>
@@ -44,49 +48,60 @@
             <p>Polymorphism appears when the function or methods that needs to change at compile-time(overloading) or run-time(overriding)</p>
             <p>Always starts with compiling the code first, entering the compilation phase to check if have any uninitialized var. Next starts the execution of the program, which find some not allow procedures or undefined result.</p>
 
-            <blockquote>
-                <b>Example Image🔰</b><br>
-                Class A{ //base class A<br>
-                    &emsp;int a,b;<br>
-                public:<br>
-                &emsp;void change(int varA){ <br>
-                    &emsp;&emsp;a = varA;<br>
-                    &emsp;} <br>
-                    &emsp;void change(int varA, varB){ <br>
-                        &emsp;&emsp;a = varA;<br>
-                        &emsp;&emsp;b = varB;<br>
-                    &emsp;} <br>
-                    &emsp;void info(){ <br>
-                        &emsp;&emsp;cout << "Class A information" << endl; <br>
-                        &emsp;} <br>
-                } <br><br>
-                Class B : Public A{ //derived class B<br>
-                Public: <br>
-                &emsp;void info(){ <br>
-                    &emsp;&emsp;cout << "Class B information" << endl; <br>
-                    &emsp;} <br>
-                } <br>
-                <br>
-                int main(){ <br>
-                    &emsp;A exampleA; <br>
-                    &emsp;A.change(1); //change a = 1; <br>
-                    &emsp;A.change(2,3); //change a = 2, b = 3; <br>
-                    &emsp;B exampleB; <br>
-                    &emsp;A.info(); //prints: Class A information <br>
-                    &emsp;B.info(); //overriding, prints: Class B information <br>
-                    &emsp;return 0; <br>
-                } <br>
-            </blockquote>
+            <pre><code class="language-cpp">
+                #include <iostream>
+                
+                    <b>Example Image🔰</b><br>
+                    Class A{ //base class A
+                        int a,b;
+                    public:
+                    void change(int varA){ 
+                       a = varA;
+                        }
+                        void change(int varA, varB){
+                           a = varA;
+                            b = varB;
+                        }
+                        void info(){
+                            cout << "Class A information" << endl;
+                            }
+                    }
+                    Class B : Public A{ //derived class B
+                    Public:
+                    void info(){
+                        cout << "Class B information" << endl;
+                        }
+                    }
+                    
+                    int main(){
+                        A exampleA;
+                        A.change(1); //change a = 1;
+                        A.change(2,3); //change a = 2, b = 3;
+                        B exampleB;
+                        A.info(); //prints: Class A information
+                        B.info(); //overriding, prints: Class B information
+                        return 0;
+                    }
+            </code></pre>
         </div>
         <div>
             <h3>Namespace</h3>
             <p>Usually we will use namespace <b>std</b> for cin and cout, and using namespace <b>sdds</b> for other functions</p>
-            <blockquote>
+            <pre><code class="language-cpp">
+                #include &lt;iostream&gt;
+                
+                using namespace std;
 
-            </blockquote>
+                int main() {
+                    cout << "Hello, World!" << endl;
+                    return 0;
+                }
+            </code></pre>
+            
         </div>
 
 
     </div>
+    <script>Prism.highlightAll();</script>
 </body>
 </html>
