@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP244 - Lecture 1</title>
+    <!-- <link rel="stylesheet" href="../style/oop.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.js"></script>
+
+</head>
+<body>
+    <div>
+        <h3>C Program - Basic Types</h3>
+        <p>Create a main.cpp and run your first code example</p>
+        <pre><code class="language-cpp">
+            #define _CRT_SECURE_NO_WARNINGS //remove deprecation warnings
+            #include <stdio.h> //code library
+
+            int main(){
+                int x; //declare x as integer (Ex. 1)
+                double y; //declare y as double (Ex. 3.14)
+                char z; //declare z as character (Ex. a)
+    
+                x = 1; //define x, store the number 1 to variable x;
+                printf("This is x: %d\n", x); //print x to console, %d is a integer variable and "," x is printing out x variable 
+                
+                y = 3.14;
+                printf("This is x: %.2lf\n", y); //print y to console, %lf is double variable
+    
+                z = 'a';
+                printf("This is x: %c\n", z); //print z to console, %c is character variable
+
+                return 0;
+            }
+        </code></pre>
+    </div>
+
+    <div>
+        <h3>How to do round up numbers for integers?</h3>
+        <pre><code class="language-cpp">
+            #define _CRT_SECURE_NO_WARNINGS
+            #include <stdio.h>
+
+            int main(){
+                int x;
+
+                x = 1.1 + 0.5; //For example, x = 1.1, we add 0.5 to see if number can goes to 2. something.
+                printf("x is still 1: %d\n", x); //x is still 1 because x = 1.6, chop off all decimal place for integer declarations
+                
+                x = 1.6 + 0.5;
+                printf("x is 2: %d\n", x); //x is 2 because x = 2.1, chop off all decimal place again
+
+                return 0;
+            }
+        </code></pre>
+    </div>
+    <div>
+        <h3>ASCII Table</h3>
+        <p>First row = decimal number, third row = character</p>
+        <img src="./img/ASCII.png" alt="ASCII table">
+    </div>
+    
+    <div>
+        <h3>How to use ASCII table for characters?</h3>
+        <pre><code class="language-cpp">
+            #define _CRT_SECURE_NO_WARNINGS
+            #include <stdio.h>
+
+            int main(){
+                char z;
+
+                z = 65; //This will print letter 'A' since 'A' = 65 in ASCII table
+
+                printf("z is A: %c\n", z); // print letter 'A'
+
+                printf("z is A: %d\n", z); // print integer 65
+
+                return 0;
+            }
+        </code></pre>
+    </div>
+
+    <a href="./IPC144.html">Back</a>
+    <script>Prism.highlightAll();</script>
+</body>
+</html>
