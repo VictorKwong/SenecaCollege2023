@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP244 - Lecture 1</title>
+    <!-- <link rel="stylesheet" href="../style/oop.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.js"></script>
+
+</head>
+<body>
+    <div>
+        <h3>Static and Dynamic Memory</h3>
+        <p>Easy to understand how Static Memory works. It dies when it is out of scope</p>
+        <pre><code>
+            int main(){
+                int x = 10;
+                if(true){
+                    int y = 20;
+                } //y dies here because it is out of scope
+            } //x dies here because it is out of scope
+        </code></pre>
+        <p>Hard to understand how Dynamic Memory works. You need to manually create it and manually destroy it.</p>
+        <pre><code>
+            int main(){
+                int * x;
+                int * y;
+                x = new int [3];
+                delete [] x; //delete dynamic array
+                x = nullptr; //good practice to deallocate x
+
+                y = new int;
+                delete y; //delete dynamic single object
+                y = nullptr; //good practice to deallocate y
+                return 0;
+            }
+        </code></pre>
+    </div>
+    <div>
+        <h3>Declarations VS Definitions</h3>
+        <p>Understanding difference between Declarations and Definitions, the simple concept is Declarations doesn't gives out information on what to do about the "thing", where Definitions provides all the details to the "thing"</p>
+        <pre><code>
+            //Declarations
+            int sum(int a, int b);
+            int x;
+
+            //Definitions
+            int sum(int a, int b){
+                return a + b;
+            }
+            int x = 0;
+        </code></pre>
+        <a href="./OOP224.html">Back</a>
+    </div>
+    <script>Prism.highlightAll();</script>
+</body>
+</html>
