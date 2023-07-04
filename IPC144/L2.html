@@ -172,22 +172,65 @@
                 int x = 0, y = 1;
 
                 printf("Comparison Result: 1 means true, 0 means false.\n");
-                printf("Equal to x == z, 10 == 10: %d\n", x == z);
-                printf("Equal to x == y, 10 == 11: %d\n", x == y);
-                printf("Not equal to x != y, 10 != 11: %d\n", x != y);
-                printf("Not equal to x != z, 10 != 10: %d\n", x != z);
-                printf("Greater than y > x, 11 > 10: %d\n", y > x);
-                printf("Greater than x > z, 10 > 10: %d\n", x > z);
-                printf("Greater than or equal to x >= z, 10 >= 10: %d\n", x >= z);
-                printf("Greater than or equal to x >= y, 10 >= 11: %d\n", x >= y);
-                printf("Less than x < y, 10 < 11: %d\n", x < y);
-                printf("Less than x < z, 10 < 10: %d\n", x < z);
-                printf("Less than or equal to x <= z, 10 <= 10: %d\n", x <= z);
-                printf("Less than or equal to y <= x, 11 <= 10: %d\n", y <= x);
+                printf("OR Operator ||\n");
+                printf("1. 0 == 1 || 0 == 1: %d\n", x == y || x == y);
+                printf("1. 1 == 1 || 0 == 1: %d\n", x == x || x == y);
+                printf("1. 0 == 1 || 1 == 1: %d\n", x == y || x == x);
+                printf("1. 1 == 1 || 1 == 1: %d\n", x == x || x == x);
 
                 return 0;
             }
         </code></pre>
+        <pre><code class="language-cpp">
+            #define _CRT_SECURE_NO_WARNINGS
+            #include <stdio.h>
+
+            int main(){
+                int x = 0, y = 1;
+
+                printf("Comparison Result: 1 means true, 0 means false.\n");
+                printf("AND Operator &&\n");
+                printf("1. 0 == 1 && 0 == 1: %d\n", x == y && x == y);
+                printf("1. 1 == 1 && 0 == 1: %d\n", x == x && x == y);
+                printf("1. 0 == 1 && 1 == 1: %d\n", x == y && x == x);
+                printf("1. 1 == 1 && 1 == 1: %d\n", x == x && x == x);
+
+                return 0;
+            }
+        </code></pre>
+        <pre><code class="language-cpp">
+            #define _CRT_SECURE_NO_WARNINGS
+            #include <stdio.h>
+
+            int main(){
+                int x = 0, y = 1;
+
+                printf("Comparison Result: 1 means true, 0 means false.\n");
+                printf("NOT Operator !\n");
+                printf("1. 0 != 0: %d\n", x == y);
+                printf("1. 0 != 1: %d\n", x == x);
+
+                return 0;
+            }
+        </code></pre>
+    </div>
+
+    <div>
+        <h3>DeMorgan's Law</h3>
+        <p>Logic stays the same but converting the Operator to the other sign</p>
+        <p>1. Change && to ||, || to &&</p>
+        <p>2. Invert individual terms</p>
+        <p>3. Invert the entire expression</p>
+        <blockquote>
+            Example🔰<br>
+            !(x < 5 && y > 15) <br>
+            1. !(x < 5 || y > 15) <br>
+            2. !(!(x < 5) && !(y > 15)) <br>
+            2.1 !(x >= 5) && (y <= 15) <br>
+            3. !!(x >= 5 && y <= 15) <br>
+            3.1 (x >= 5 && y <= 15) <br><br>
+            Therefore, !(x < 5 && y > 15) is logically identical to (x >= 5 && y <= 15)
+        </blockquote>
     </div>
 
     <a href="./IPC144.html">Back</a>
