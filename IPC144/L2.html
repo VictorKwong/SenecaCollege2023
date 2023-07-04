@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP244 - Lecture 1</title>
+    <!-- <link rel="stylesheet" href="../style/oop.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.js"></script>
+
+</head>
+<body>
+    <div>
+        <h3>C Program - Relational & Logical Operator</h3>
+        <p>Relational Operator, 6 in total</p>
+        <table border="1">
+            <tr>
+                <th>Operator</th>
+                <th>What it means</th>
+                <th>Example (true)</th>
+                <th>Example (false)</th>
+            </tr>
+            <tr>
+                <th>==</th>
+                <th>Equal to</th>
+                <th>1 == 1</th>
+                <th>1 == 0</th>
+            </tr>
+            <tr>
+                <th>!=</th>
+                <th>Not equal to</th>
+                <th>1 != 0</th>
+                <th>1 != 1</th>
+            </tr>
+            <tr>
+                <th>></th>
+                <th>Greater than</th>
+                <th>2 > 1</th>
+                <th>1 > 2</th>
+            </tr>
+            <tr>
+                <th>>=</th>
+                <th>Greater than or equal to</th>
+                <th>1 >= 1</th>
+                <th>0 >= 1</th>
+            </tr>
+            <tr>
+                <th><</th>
+                <th>Less than</th>
+                <th>1 < 2</th>
+                <th>2 < 1</th>
+            </tr>
+            <tr>
+                <th><=</th>
+                <th>Less than or equal to</th>
+                <th>1 <= 1</th>
+                <th>1 <= 0</th>
+            </tr>
+        </table>
+        <pre><code class="language-cpp">
+            #define _CRT_SECURE_NO_WARNINGS
+            #include <stdio.h>
+
+            int main(){
+                int x = 10, y = 11; //can define both x and y as integer
+                int z = 10;
+
+                printf("Comparison Result: 1 means true, 0 means false.\n");
+                printf("Equal to x == z, 10 == 10: %d\n", x == z);
+                printf("Equal to x == y, 10 == 11: %d\n", x == y);
+                printf("Not equal to x != y, 10 != 11: %d\n", x != y);
+                printf("Not equal to x != z, 10 != 10: %d\n", x != z);
+                printf("Greater than y > x, 11 > 10: %d\n", y > x);
+                printf("Greater than x > z, 10 > 10: %d\n", x > z);
+                printf("Greater than or equal to x >= z, 10 >= 10: %d\n", x >= z);
+                printf("Greater than or equal to x >= y, 10 >= 11: %d\n", x >= y);
+                printf("Less than x < y, 10 < 11: %d\n", x < y);
+                printf("Less than x < z, 10 < 10: %d\n", x < z);
+                printf("Less than or equal to x <= z, 10 <= 10: %d\n", x <= z);
+                printf("Less than or equal to y <= x, 11 <= 10: %d\n", y <= x);
+
+                return 0;
+            }
+        </code></pre>
+    </div>
+    <div>
+        <p>Logical Operator, 3 in total</p>
+        <table border="1">
+            <tr>
+                <th colspan="3">OR Operator Table ||</th>
+            </tr>
+            <tr>
+                <th>X Value</th>
+                <th>Y Value</th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <th>0</th>
+                <th>0</th>
+                <th>0</th>
+            </tr>
+            <tr>
+                <th>0</th>
+                <th>1</th>
+                <th>1</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>0</th>
+                <th>1</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>1</th>
+                <th>1</th>
+            </tr>
+        </table>
+        <br>
+        <table border="1">
+            <tr>
+                <th colspan="3">AND Operator Table &&</th>
+            </tr>
+            <tr>
+                <th>X Value</th>
+                <th>Y Value</th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <th>0</th>
+                <th>0</th>
+                <th>0</th>
+            </tr>
+            <tr>
+                <th>0</th>
+                <th>1</th>
+                <th>0</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>0</th>
+                <th>0</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>1</th>
+                <th>1</th>
+            </tr>
+        </table>
+        <br>
+        <table border="1">
+            <tr>
+                <th colspan="3">NOT Operator !</th>
+            </tr>
+            <tr>
+                <th>X Value</th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>0</th>
+            </tr>
+            <tr>
+                <th>0</th>
+                <th>1</th>
+            </tr>
+        </table>
+        <pre><code class="language-cpp">
+            #define _CRT_SECURE_NO_WARNINGS
+            #include <stdio.h>
+
+            int main(){
+                int x = 0, y = 1;
+
+                printf("Comparison Result: 1 means true, 0 means false.\n");
+                printf("Equal to x == z, 10 == 10: %d\n", x == z);
+                printf("Equal to x == y, 10 == 11: %d\n", x == y);
+                printf("Not equal to x != y, 10 != 11: %d\n", x != y);
+                printf("Not equal to x != z, 10 != 10: %d\n", x != z);
+                printf("Greater than y > x, 11 > 10: %d\n", y > x);
+                printf("Greater than x > z, 10 > 10: %d\n", x > z);
+                printf("Greater than or equal to x >= z, 10 >= 10: %d\n", x >= z);
+                printf("Greater than or equal to x >= y, 10 >= 11: %d\n", x >= y);
+                printf("Less than x < y, 10 < 11: %d\n", x < y);
+                printf("Less than x < z, 10 < 10: %d\n", x < z);
+                printf("Less than or equal to x <= z, 10 <= 10: %d\n", x <= z);
+                printf("Less than or equal to y <= x, 11 <= 10: %d\n", y <= x);
+
+                return 0;
+            }
+        </code></pre>
+    </div>
+
+    <a href="./IPC144.html">Back</a>
+    <script>Prism.highlightAll();</script>
+</body>
+</html>
