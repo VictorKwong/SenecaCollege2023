@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP244 - Lecture 1</title>
+    <!-- <link rel="stylesheet" href="../style/oop.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.js"></script>
+
+</head>
+<body>
+    <div>
+        <h3>the concepts before study break that needs to pay attention</h3>
+        <pre><code class="language-cpp"> 
+            #define _CRT_SECURE_NO_WARNINGS
+            #define SIZE 4
+            #define MAX_PAY_RATES 5
+
+            #include <stdio.h>
+
+            int main(void)
+            {
+                double price = 4.58;
+                int sol;
+                int solTwo = 3;
+
+                sol = (int)(price * 100);
+
+                printf("Result: %d\n", (int)(price * 100));
+                
+                printf("\t\t \\Result: %.2lf\n", (float)(sol / 100));
+                printf("Result: %.2lf\n", (float)sol / 100);
+
+                sol = 1;
+                solTwo = 2;
+
+                printf("Result Operator: %d\n", \
+                    ((sol == 1 || solTwo == 1) && (sol == 2 || solTwo == 2)) || \
+                    ((sol >= 1 || solTwo >= 1) && (sol >= 2 || solTwo >= 2)));
+
+
+                //DeMorgan's Law
+
+                int x, y;
+
+                x = 2;
+                y = 3;
+
+                printf("Result x and y: % d\n", !(x < 3 && y > 2));
+                printf("Result x and y: % d\n", !(x < 3) || !(y > 2));
+                printf("Result x and y: % d\n\n", (x >= 3 || y <= 2));
+
+                int memory;
+
+                do {
+                    printf("Enter a integer number Positive? : ");
+                    scanf("%d", &memory);
+                    if (memory < 0) {
+                        printf("ERROR: Value must be 0 or more.\n");
+                    }
+                    else {
+                        printf("You have entered %d!!!\n\n", memory);
+                    }
+                } while (memory < 0);
+
+
+                int numArray[SIZE] = { 0, 2, 3, 724 };
+
+                int anotherArray[4] = { 1 ,2 ,3 , 4 };
+
+
+
+                for (int i = 0; i < SIZE; i++) {
+                    printf("%d. %d\n", i, numArray[i]);
+                }
+                printf("\nReverse way\n");
+
+                for (int i = SIZE - 1; i > -1; i--) {
+                    printf("%d. %d\n",i, numArray[i]);
+                }
+
+                printf("Calling numArray: %d\n", anotherArray[3]);
+
+
+                {
+                    int numPayRates = 0;
+                    double payRates[MAX_PAY_RATES] = { 0 };
+                    double sum = 0.0, average = 0.0;
+                    int notNegative = 0;
+                    do
+                    {
+                        notNegative = 0;
+                        printf("Enter a pay rate (negative to stop): ");
+                        scanf("%lf", &payRates[numPayRates]);
+                        if (/* the value entered is greater or equal zero*/)
+                        {
+                            /* add value onto sum and
+                            increment the number of values read and
+                            mark this as a not negative value */
+                        }
+                    } while (/* value entered was not negative */);
+
+                    average = /* expression to calculate average pay rate */;
+                    printf("The average pay rate is %.2lf\n", average);
+
+                    int i = 0;
+                    printf("The pay rates below the average are:\n");
+
+                    for (; ; )	// loop over all pay rates
+                    {
+                        if ( /* pay rate is less than the average */)
+                        {
+                            printf("%.2lf\n", payRates[i]);
+                        }
+                    }
+                }
+
+                {
+                    double payRate[MAX_PAY_RATES] = { 14.77, 28.00, 16.00, 20.50 };
+                    int highestPosition = -1;
+                    double highestRate = -1.0;
+                    for (; ; )
+                    {
+                        if (/* this array member is higher than the highest so far*/)
+                        {
+                            /* remember this as the new high rate and store its position */
+                        }
+                    }
+
+                    printf("The highest pay rate is %.2lf in position %d\n", highestRate, highestPosition);
+                }
+                return 0;
+            }
+        </code></pre>
+    </div>
+
+    <a href="./IPC144.html">Back</a>
+    <script>Prism.highlightAll();</script>
+</body>
+</html>

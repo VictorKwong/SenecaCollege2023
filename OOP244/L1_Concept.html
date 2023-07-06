@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP244 - Lecture 1</title>
+    <!-- <link rel="stylesheet" href="../style/oop.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.js"></script>
+
+</head>
+<body>
+    <div>
+        <h3>3 Parts of compilation, in sequence</h3>
+        <p>1. Processor: All #include header files, #define macros</p>
+        <p>2. Complier: Make each of .cpp to a translation unit, make it like a package first</p>
+        <p>3. Linker: Convert the translation unit to system binaries, and then make it as ONE big complex executable binary version</p>
+        <blockquote>
+            <b>Example Image🔰</b><br><br>
+            main.cpp 👉 main unit<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;👉executable binary version<br>
+            book.cpp 👉 book unit<br><br>
+            Processor👉 Complier 👉 Linker
+        </blockquote>
+    </div>
+    <div>
+        <h3>3 Important Concept for Object-oriented programming language</h3>
+        <div>
+            <p>1. Encapsulation</p>
+            <p>The cout is storing the object data in memory and also controlling how it flows from the data</p>
+            <p><< sign work as a wrapper, it encapsulate the information to the cout without exposing any sort of implementation details</p>
+            <blockquote>
+                <b>Consider the example🔰</b><br><br>
+                cout << "Printing Statement";
+            </blockquote>
+            <p><b>Does:</b> To make sure client only sees the simple output to the object without showing any further internal data</p>
+        </div>
+        <div>
+            <p>2. Inheritance</p>
+            <p>Inheritance appears when there are two class A and B, where class A is a domain class and class B is a derived class.</p>
+            <blockquote>
+                <b>Example Image🔰</b><br>
+                Class A(super or base class) 👉 Class B(Sub or derived class)
+            </blockquote>
+        </div>
+        <div>
+            <p>3. Polymorphism</p>
+            <p>Polymorphism appears when the function or methods that needs to change at compile-time(overloading) or run-time(overriding)</p>
+            <p>Always starts with compiling the code first, entering the compilation phase to check if have any uninitialized var. Next starts the execution of the program, which find some not allow procedures or undefined result.</p>
+
+            <pre><code class="language-cpp">
+                #include <iostream>
+                
+                    <b>Example Image🔰</b><br>
+                    Class A{ //base class A
+                        int a,b;
+                    public:
+                    void change(int varA){ 
+                       a = varA;
+                        }
+                        void change(int varA, varB){
+                           a = varA;
+                            b = varB;
+                        }
+                        void info(){
+                            cout << "Class A information" << endl;
+                            }
+                    }
+                    Class B : Public A{ //derived class B
+                    Public:
+                    void info(){
+                        cout << "Class B information" << endl;
+                        }
+                    }
+                    
+                    int main(){
+                        A exampleA;
+                        A.change(1); //change a = 1;
+                        A.change(2,3); //change a = 2, b = 3;
+                        B exampleB;
+                        A.info(); //prints: Class A information
+                        B.info(); //overriding, prints: Class B information
+                        return 0;
+                    }
+            </code></pre>
+        </div>
+        <div>
+            <h3>Namespace</h3>
+            <p>Usually we will use namespace <b>std</b> for cin and cout, and using namespace <b>sdds</b> for other functions</p>
+            <pre><code class="language-cpp">
+                #include &lt;iostream&gt;
+                
+                using namespace std;
+
+                int main() {
+                    cout << "Hello, World!" << endl;
+                    return 0;
+                }
+            </code></pre>
+            
+        </div>
+
+        <a href="./OOP224.html">Back</a>
+    </div>
+    <script>Prism.highlightAll();</script>
+</body>
+</html>
