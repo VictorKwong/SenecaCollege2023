@@ -88,6 +88,37 @@
             }
         </code></pre>
     </div>
+    <div>
+        <h3>switch statement</h3>
+        <p>switch statement concept is similar to if statement, but it can only compare 1 statement at a time </p>
+        <pre><code class="language-cpp">
+            #define _CRT_SECURE_NO_WARNINGS
+            #include <stdio.h>
+
+            int main(){
+                int x = 1;
+
+
+                switch(x){
+                    case 1:
+                        printf("X is 1.\n");
+                        break;
+                    case 2:
+                        printf("X is 2.\n");
+                        break;
+                    case 'A':
+                        printf("X is A.\n");
+                        break;
+                    default:
+                        printf("if no condition is satisfy, then it will run this line..\n");
+                        break;
+                }
+
+                return 0;
+            }
+        </code></pre>
+    </div>
+
     <a href="./IPC144.html">Back</a>
     <script>Prism.highlightAll();</script>
 </body>
