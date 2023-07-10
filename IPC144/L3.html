@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP244 - Lecture 1</title>
+    <!-- <link rel="stylesheet" href="../style/oop.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.js"></script>
+
+</head>
+<body>
+    <div>
+        <h3>if Statement</h3>
+        <p>it will run the block code {}, if the condition has met</p>
+        <pre><code class="language-cpp">
+            #define _CRT_SECURE_NO_WARNINGS
+            #include <stdio.h>
+
+            int main(){
+                int x = 0;
+
+                if(x == 0){
+                    printf("if x is equal to 0, meet the condition, it will run this printf.\n");
+                }else if(x == 1){
+                    printf("else if x is equal to 1, meet the condition, it will run this printf.\n");
+                }else{
+                    printf("if x is not equal to 0 and it is not equal to 1, it will goes into else statement\n");
+                }
+
+                return 0;
+            }
+        </code></pre>
+    </div>
+    <div>
+        <h3>while loop</h3>
+        <p>it will keep running the code to infinite times, until the condition has met</p>
+        <pre><code class="language-cpp">
+            #define _CRT_SECURE_NO_WARNINGS
+            #include <stdio.h>
+
+            int main(){
+                int x = 0;
+
+                while(x < 3){
+                    printf("Run infinite until x is equal or greater than 3: %d.\n", x);
+                    x++; //increment x;
+                }
+
+                return 0;
+            }
+        </code></pre>
+    </div>
+    <div>
+        <h3>do while loop</h3>
+        <p>Same concept as while loop, but do while loop will run at least once.</p>
+        <pre><code class="language-cpp">
+            #define _CRT_SECURE_NO_WARNINGS
+            #include <stdio.h>
+
+            int main(){
+                int x = 0;
+
+                while(x < 3){
+                    printf("Run infinite until x is equal or greater than 3: %d.\n", x);
+                    x++; //increment x;
+                }
+
+                return 0;
+            }
+        </code></pre>
+    </div>
+    <div>
+        <h3>for loop</h3>
+        <p>Using for loop when you know how many times it should run</p>
+        <pre><code class="language-cpp">
+            #define _CRT_SECURE_NO_WARNINGS
+            #include <stdio.h>
+
+            int main(){
+                int x = 1;
+
+                for(int i = 0; i < 3; i++){
+                    printf("%d. Printing x.\n", i); //it will print 3 times
+                }
+
+                return 0;
+            }
+        </code></pre>
+    </div>
+    <a href="./IPC144.html">Back</a>
+    <script>Prism.highlightAll();</script>
+</body>
+</html>
