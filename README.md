@@ -11,3 +11,5 @@ Structure for all the course - W1 - W6, W7(Study Week), W8-W12, Final
 The website will stick with the basics because we are focus on the course materials on the first step, meaning that those materials need to break it down into parts to make student understand it easily.
 
 - Structure base: HTML, CSS, Javascript
+
+## Weekly Update ULI101
