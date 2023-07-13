@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULI101 - Lecture 3</title>
+    <!-- <link rel="stylesheet" href="../style/oop.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.js"></script>
+
+</head>
+<body>
+    <div>
+        <h3>File Path Name</h3>
+        <p>1. Absolute pathname</p>
+        <p>Always start with symbol /</p>
+        <p>It will sent you to the exact location, no matter where you are</p>
+        <pre><code>
+            Example🔰:
+            
+            cd /home/userid/week3/notes
+
+            - home directory -> user id directory -> week3 directory -> notes directory (change directory, goes to notes directory)
+
+            cd /home/userid/ABC
+
+            - home directory -> user id directory -> ABC directory (change directory goes to ABC directory)
+        </code></pre>
+
+        <p>2. Relative-To-Home pathname</p>
+        <p>Always start with symbol ~/</p>
+        <p>~ symbol represent as /home/userid</p>
+        <p>It will sent you to the exact location, no matter where you are (same principle as Absolute pathname)</p>
+        <pre><code>
+            Example🔰:
+            
+            cd ~/week3/notes
+
+            - home directory -> user id directory -> week3 directory -> notes directory (change directory, goes to notes directory)
+
+            cd ~/ABC
+
+            - home directory -> user id directory -> ABC directory (change directory goes to ABC directory)
+        </code></pre>
+
+        <p>3. Relative pathname</p>
+        <p>can start with 5 different cases . ./ .. ../ filename</p>
+        <p>3.1 "." symbol means current directory, where ./ can type filename afterward, Ex. cd ./ABC</p>
+        <p>3.2 ".." symbol means move back to parent directory, where ../ can type filename afterward, Ex. cd ../ABC</p>
+        <p>3.3 "ABC" typing filename, means move down into a directory called ABC</p>
+        <p>You need to know where you are before typing Relative pathname (pwd)</p>
+        <pre><code>
+            Example🔰:
+            
+            cd .
+
+            - move to current directory (does nothing)
+
+            cd ..
+
+            - move back to parent directory (Before. /home/userid 👉 After /home)
+
+            cd ../ABC
+
+            - move back to parent directory, then move down into a directory called ABC (Before. /home/userid 👉 After /home/ABC)
+
+            cd ABC
+            cd ./ABC
+
+            - move down into a directory called ABC (Before. /home 👉 After /home/ABC)
+        </code></pre>
+    </div>
+
+    <div>
+        <h3>Filename Expansion Symbols: <b>* ? [] [!]</b></h3>
+        <pre><code>
+            touch a aac ab abbc abc ac adc aec abb
+            - create a bunch of empty files to test out Filename Expansion Symbols
+
+            Example1: ls abb*
+            Result Expect1: abbc abb
+            - * means 0 or more any characters
+            
+            Example2: ls aa[a-z]
+            Result Expect2: aac 
+            - [] means 1 character with that specific type(a-z)
+            
+            Example3: ls a?
+            Result Expect3: ab ac 
+            - ? means 1 character with any type
+
+            Example4: ls aa[!0-9]
+            Result Expect2: aac 
+            - [!] means 1 character NOT with that specific type(not 0-9)
+        </code></pre>
+    </div>
+
+    <a href="./ULI101.html">Back</a>
+    <script>Prism.highlightAll();</script>
+</body>
+</html>
