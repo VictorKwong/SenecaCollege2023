@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULI101 - Lecture 4</title>
+    <!-- <link rel="stylesheet" href="../style/oop.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.js"></script>
+
+</head>
+<body>
+    <div>
+        <h3>Numbering Conversion</h3>
+        <p>decimal - binary - octal – hexadecimal</p>
+
+        <pre><code class="language-cpp">
+            binary 01
+            octal 0-7
+            hexadecimal 0-9,A-F (A-10, B-11, C-12, D-13, E-14, F-15)
+            
+
+            <table border="1">
+                <tr>
+                    <th colspan="3">Number</th>
+                </tr>
+                <tr>
+                    <th>Decimal</th>
+                    <th>Binary</th>
+                    <th>Octal</th>
+                    <th>Hexadecimal</th>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <th>1100</th>
+                    <th>14</th>
+                    <th>C</th>
+                </tr>
+            </table>
+
+            Ex. We have a Decimal Value of 12
+
+            Binary calculation: 1 1 0 0
+                2^3 * 1 + 2^2 * 1 + 2^1 * 0 + 2^0 * 0
+            =   8   * 1 + 4   * 1 + 2   * 0 + 1   * 0
+            =   12
+            
+            Octal calculation: 14 = 001 100
+                2^5 * 0 + 2^4 * 0 + 2^3 * 1 + 2^2 * 1 + 2^1 * 0 + 2^0 * 0
+            =   32  * 0 + 16  * 0 + 8   * 1 + 4   * 1 + 2   * 0 + 2   * 0
+            =   12
+
+            Hexadecimal calculation: C
+                C = 12
+        </code></pre>
+    </div>
+    <div>
+        <h3>File Permission</h3>
+        <p>To check file permission, use command ls -l</p>
+        <p>-rwxr-xr-x if it is a file</p>
+        <p>drwxr-xr-x if it is a directory</p>
+        <pre><code class="language-cpp">
+            Example 🔰
+
+            using ls -l we have a file named a.txt with the permission shown below:
+            -rwxr-xr--
+
+            Breaking down into 3 sets of (---)
+            1.First set rwx is represent to user
+            2.Second set r-x is represent to groups
+            3.Third set r-- is represent to others
+        </code></pre>
+
+        <p>Using chmod command to change the file permission</p>
+        <pre><code class="language-cpp">
+            Example 🔰
+
+            ls -l shows a.txt status:
+            -rwxr-xr-- a.txt
+
+            chmod 777 a.txt //Change a.txt permission to rwx rwx rwx (111 111 111 Octal = 4+2+1 = 7)
+
+            ls -l update:
+            -rwxrwxrwx a.txt //All user, group and others can edit this file
+
+            chmod u=rwx,g=rx,o=r a.txt //Change a.txt permission to user = read write execute, group = read and execute, other = read
+        </code></pre>
+
+        <p>umask default value = 022, umask value can only works with 0,2,7</p>
+        <p>default values for directories (777) | regular files (666)</p>
+        <pre><code class="language-cpp">
+            Example 🔰
+            a.txt - regular files
+            666 Original number
+           -022 umask
+            644 Octal number Result
+
+            convert to read write and execute
+
+            110 100 100
+            rw- r-- r--
+
+            Therefore a.txt file permission result will be rw-r--r--
+
+
+            ABC - directory
+            777 Original number
+           -022 umask
+            755 Octal number Result
+
+            convert to read write and execute
+
+            111 101 101
+            rwx r-x r-x
+
+            Therefore ABC file permission result will be rwxr-xr-x
+        </code></pre>
+        
+    </div>
+
+    <a href="./ULI101.html">Back</a>
+    <script>Prism.highlightAll();</script>
+</body>
+</html>
