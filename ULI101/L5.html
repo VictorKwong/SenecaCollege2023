@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULI101 - Lecture 5</title>
+    <!-- <link rel="stylesheet" href="../style/oop.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.js"></script>
+
+</head>
+<body>
+    <div>
+        <h3>Redirection symbols</h3>
+        <p>1 - 2 - 2 symbols, 1 standard input (stdin) | 2 standard output (stdout) | 2 standard error (stderr)</p>
+        <pre><code class="language-cpp">
+            Example 🔰
+            
+            stdin <
+
+            tr 'a-z' 'A-Z' < text.txt
+
+            *text.txt has content "abc"
+            *the print screen result will be "ABC" (translate all characters from lower case to upper case)
+            *After running the command, text.txt remains the same content "abc"
+
+            - Extract a copy content of text.txt, run the command tr 'a-z' 'A-Z' and print out to the screen
+            - *The content of text.txt will not be modified. (stays the same content)
+
+            -------------------------------------------------------------------
+
+            stdout > , >>
+
+            pwd > savePrintResult.txt
+
+            - Save the pwd command result, and overwrite it to savePrintResult.txt
+            - The file will have the following content (correct):
+            /home/userid/
+            - Instead of (incorrect):
+            pwd
+
+            pwd >> savePrintResult.txt
+
+            - Save the pwd command result, and append it to savePrintResult.txt
+            - The file will have the following content (correct):
+            (original content)
+            /home/userid/
+
+            -------------------------------------------------------------------
+
+            stderr 2> , 2>>
+
+            PWD 2> saveErrorResult.txt
+            
+            - Save the error message, and overwrite it to saveErrorResult.txt
+            - In this example, PWD has the following error message, and it will overwrite to saveErrorResult.txt:
+            -bash: PWD: command not found
+            -*If there is no error message, saveErrorResult.txt will have an empty content.
+
+            PWD 2>> saveErrorResult.txt
+            - It works the same as 2>, the only difference is changing overwrite to appending the saveErrorResult.txt
+        </code></pre>
+    </div>
+
+    <div>
+        <h3>Black hole - /dev/null</h3>
+        <p>It can dump all the unwanted information to the black hole. Once the information save into the black hole, it is gone for good.</p>
+        <pre><code class="language-cpp">
+            Example 🔰
+
+            pwd > /dev/null
+            - store the pwd command result to black hole, in this case the stored information is gone for good.
+        </code></pre>
+    </div>
+
+    <a href="./ULI101.html">Back</a>
+    <script>Prism.highlightAll();</script>
+</body>
+</html>
