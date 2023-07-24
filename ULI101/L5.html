@@ -73,6 +73,54 @@
         </code></pre>
     </div>
 
+    <div>
+        <h3>Here command cat &lt;&lt;symbol</h3>
+        <p>Declare the symbols and end with the same symbols</p>
+        <p>Using Here command to print out the text message</p>
+        <pre><code class="language-cpp">
+            Example 🔰
+
+            cat << ?
+            document ${USER}
+            Date - $(date)
+            ?
+
+            - In this example we use symbol ? to start and ? to end the Here command
+
+            print result:
+            document [USERNAME variable]
+            Date - [Today's Date variable]
+        </code></pre>
+    </div>
+
+    <div>
+        <h3>Pipeline command |</h3>
+        <p>Pipeline command will keep reading the next command from the left to the right until it reach the end.</p>
+        <p>Advantages is no need to create temporary files</p>
+        <pre><code class="language-cpp">
+            Example 🔰
+
+            ls -l | sort -r | tr 'a-z' 'A-Z'
+
+            1. ls -l, to list out all document result with details
+            2. sort -r, After getting result from 1. sort the order from Z to A (reverse order)
+            3. tr 'a-z' 'A-Z', After getting the result from 2. translate all lower characters to upper characters
+            - Reading Pipeline command from left to right.
+
+            ls -l Result:
+            -rw-r--r--  1 username users     29 Jun 22  2022 bimo.txt
+            -rwxr-x---  2 username users     24 Jun  3  2022 vendors
+
+            ls -l | sort -r Result:
+            -rwxr-x---  2 username users     24 Jun  3  2022 vendors
+            -rw-r--r--  1 username users     29 Jun 22  2022 bimo.txt
+            
+            ls -l | sort -r | tr 'a-z' 'A-Z' Result:
+            -RWXR-X---  2 USERNAME USERS     24 JUN  3  2022 VENDORS
+            -RW-R--R--  1 USERNAME USERS     29 JUN 22  2022 BIMO.TXT
+        </code></pre>
+    </div>
+
     <a href="./ULI101.html">Back</a>
     <script>Prism.highlightAll();</script>
 </body>
