@@ -41,6 +41,56 @@
             Enter      //press Enter because you want the original file name (a.txt), unless you want to save another name
         </code></pre>
         <p>Week 3 Materials: File Location Path</p>
+        <pre><code class="language-cpp">
+            - Absolute path and Relative to home path does not care where you are (pwd), it will move to the exact address that you have typed.
+            - Absolute path:
+            /home/yourID/ABC
+            
+            - Relative to home path:
+            ~/ABC
+
+            
+            - Relative path names use it usually, but you need to know where you are first (pwd)
+            - Relative path (current directory):
+            ./
+            .
+
+            - Relative path (parent directory):
+            ../ABC
+            ../
+            ..
+
+            - Relative path (move down to one directory):
+            ./ABC
+            ABC
+        </code></pre>
+        <p>Week 4 Materials: Permissions + data representation</p>
+        <pre><code class="language-cpp">
+            4 Numeric types: Binary Decimal Octal Hexadecimal
+
+            Binary:
+            0 0 0 0 0 1 0 1
+            0+0+0+0+0+4+0+1
+            = 5 (Decimal)
+
+            Decimal:
+            5
+
+            Octal:
+            0 0 0 1 0 1
+            0+0+0+4+0+1
+            = 5 (Decimal)
+
+            Hexadecimal:
+            5
+            
+            -File permission using chmod to change file permission (user,group,other)
+            chmod 744 a.txt
+
+            -Umask to control what kind of permission should it be given when creating a file or a directory
+            umask 022
+        </code></pre>
+        <p>Week 5 Materials: Redirections</p>
     </div>
 
 
