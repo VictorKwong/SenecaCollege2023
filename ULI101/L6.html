@@ -91,6 +91,60 @@
             umask 022
         </code></pre>
         <p>Week 5 Materials: Redirections</p>
+        <pre><code class="language-cpp">
+            1 stdin, 2 stdout, 2 std error 
+
+            1 + 2 + 2 = 5 redirection symbols in total
+
+            stdin <:
+            tr 'a-z' 'A-Z' < a.txt
+            - get the information from a.txt and process the command tr (change lower case to upper case in this case). The content of a.txt won't change
+
+            stdout > >>:
+            ls -l > a.txt
+            - get the command result (ls -l) and overwrite it to a.txt. No output shown
+
+            ls -l >> a.txt
+            - get the command result (ls -l) and append it to a.txt. No output shown
+
+            stderr 2> 2>>:
+            PWD 2> a.txt
+            - get the error command result (PWD) and overwrite it to a.txt. No output shown
+
+            PWD 2>> a.txt
+            - get the error command result (PWD) and append it to a.txt. No output shown
+
+
+            Grep, Pipeline |, tee command
+
+            Example 🔰
+
+            - Grep is similar to a find function (ctrl + F)
+            
+            grep '^who' a.txt
+
+            - find all lines in a.txt, who has first three character 'who' at the beginning
+            
+            Example 🔰
+
+            - Pipeline is like a continue instruction and giving more guidance after the output
+
+            ls -l | sort -r | tr 'a-z' 'A-Z' | tee result.txt
+
+            - 1. ls -l, show all the details inside this directory
+            - 2. sort -r, sort all the line in reverse order from Z to a
+            - 3. tr 'a-z' 'A-Z', change all lower case to upper case
+            - 4. tee result.txt, after processing all 3 steps, save the final output to result.txt and print the output
+
+            Example 🔰
+
+            - tee command, is like saving the output result into a text editor, moreover it will also print the output
+
+            pwd | tee result.txt
+
+            - 1. pwd, show your current location`
+            - 4. tee result.txt, save the output (pwd) to result.txt and print the output
+        </code></pre>
     </div>
 
 
