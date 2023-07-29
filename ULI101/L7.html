@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULI101 - Lecture 7</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.js"></script>
+
+</head>
+<body>
+    <div>
+        <h3>Linking Files - Hard Links VS Symbolic Links</h3>
+        <pre><code class="language-cpp">
+            Hard Links advantage:
+            1. If one of the hard link file is delete, the other hard link files content will still remain there.
+            2. If one of the hard link file is update, the other hard link files also update by itself.
+
+            Hard Links disadvantage:
+            1. Refer back to Hard Link advantage point 1, it will take a lot of space for each individual file. Ex. Each Hard Link File * Quantity, 10KB * 10 = 100KB in total
+            2. Hard Links only works for its own Linux sever, it cannot do cross over other Linux server.
+            
+            Example 🔰
+
+            Hard Link (ln parameter1 parameter2)
+            - parameter1 refers to original file that you want to do Hard Links
+            - parameter2 refers to the copy of the original file that is Hard Links.
+            
+            ln a.txt hardlink.txt
+            - a.txt is the original File
+            - hardlink.txt is the copy file that is Hard Link with a.txt.
+            - a.txt and hardlink.txt now shares the same content
+
+            ln hardlink.txt anotherHardlink.txt
+            - now all three files are Hard Link together, a.txt hardlink.txt anotherHardlink.txt
+
+            echo "test" >> a.txt
+            - append a.txt content and also updating the same content to hardlink.txt and anotherHardlink.txt (the power of Hard Link)
+
+            rm -r a.txt
+            - Even we delete the original file, the other two files hardlink.txt and anotherHardlink.txt are still Hard Link together, because they are still sharing the same i-node
+
+            > ls -li //check their PID is the same, all Hard Link files are sharing the same i-node
+        </code></pre>
+        <pre><code class="language-cpp">
+            Symbolic Links advantage:
+            1. Treat it as a desktop shortcut, Symbolic Links will give direction that leads the original file location.
+            2. Storage space is far more manageable than Hard Link because it contain way less storage space.
+
+            Symbolic Links disadvantage:
+            1. If you delete the Symbolic Link target original file, then the Symbolic Link will be broken.
+            2. There will be no backups for the original file.
+
+            
+            Example 🔰
+
+            Symbolic Link (ln -s parameter1 parameter2)
+            - parameter1 refers to original file that you want to do Symbolic Links
+            - parameter2 refers to the a short cut create by parameter1.
+            
+            ln -s a.txt symbolicLink.txt
+            - a.txt is the original File
+            - symbolicLink.txt is the short cut file create by a.txt.
+            - a.txt and symbolicLink.txt now shares the same content
+
+            echo "test" >> a.txt
+            - append a.txt content and also updating the same content to symbolicLink.txt (same logic as Hard Link)
+
+            rm -r a.txt
+            - If we delete the original file, the symbolicLink.txt file will be broken because it cannot find the original file location.
+            - Note a.txt and symbolicLink.txt they did not share the same i-node
+
+            > ls -li //check their PID is the same, all Symbolic Link files are NOT sharing the same i-node
+        </code></pre>
+    </div>
+    <div>
+        <h3>Managing Job Process</h3>
+        <pre><code class="language-cpp">
+            - Check process information:
+            ps
+            ps -u username
+            ps -l
+            ps -ef
+            ps aux
+            Top //ctrl + c, to quit the command
+        
+            - 5 Common Job Commands (fg %, bg%, kill %, kill -9 %, jobs)
+            
+            Example 🔰
+
+            - Create exercise:
+            vim a (ctrl + z)
+            vim b (ctrl + z)
+            vim c (ctrl + z)
+            vim d (ctrl + z)
+
+            - create vim a,b,c and d, after that use key command (ctrl + z) and send the job command to stop list
+            - Jobs list has 3 status: Front End, Stop List and Back End
+
+            jobs //check all status job, it can be running, stop or killed
+            - You might see there will be a "+" sign and a "-" sign after each job ID
+            - "+" sign refers to the most recent job that you have worked with
+            - "-" sign refers to the second most recent job that you have worked with
+            
+            fg %1 //go into the stop list, pull out job ID 1 and send it to the Front End. (ctrl + z) to send back to the stop list
+
+            bg %2 //go into the stop list, pull out job ID 2 and send it to the Back End. (Usually works with Sleep command, the command will keep running at the background)
+
+            kill -9 %1 //you want to terminate the job ID 1 and remove it from the job list. "kill -9" is a brute force way to terminate/kill the job ID
+        </code></pre>
+    </div>
+    <div>
+        <h3>Alias command</h3>
+        <pre><code class="language-cpp">
+            - Alias command works when you want to type the created name of the command, and it refers to the variable command that you had assigned to.
+
+            Alias abc='pwd'
+            - You have create the abc command and the command will work as "pwd", which means show where you at in this case
+
+            abc
+            /home/userID
+            - now abc will refers to pwd since you have alias the pwd command to abc
+
+            history
+            - show the history of command you have typed, with command numbers as well. Ex. 5519 abc
+
+            !5519
+            - it will trigger typing back the abc command because our example shows history command number 5519 refers to abc. (Note each Linux system will have different history + command number)
+        </code></pre>
+    </div>
+
+    <a href="./ULI101.html">Back</a>
+    <script>Prism.highlightAll();</script>
+</body>
+</html>
