@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULI101 - Lecture 7</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.js"></script>
+
+</head>
+<body>
+    <div>
+        <h3>Regular Expression & Extended Regular Expression</h3>
+        <table border="1">
+            <tr>
+                <th colspan="3">Common symbols</th>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <th>Command</th>
+                <th>What does it do?</th>
+            </tr>
+            <tr>
+                <th>Anchors</th>
+                <th>^ , $</th>
+                <th>begin with(^), end with($)</th>
+            </tr>
+            <tr>
+                <th>Single Character</th>
+                <th>.</th>
+                <th>represent 1 character with any type</th>
+            </tr>
+            <tr>
+                <th>Character Class</th>
+                <th>[ ], [^ ]</th>
+                <th>character contains([ ]), character does not contain([^ ])</th>
+            </tr>
+            <tr>
+                <th>Zero or More Occurrence</th>
+                <th>*</th>
+                <th>Zero or more occurrences of previous char</th>
+            </tr>
+            <tr>
+                <th>Repetition</th>
+                <th>{min,max}</th>
+                <th>put number to restrict the occurrences of the previous character</th>
+            </tr>
+            <tr>
+                <th>Group</th>
+                <th>()</th>
+                <th>it can group with characters or word</th>
+            </tr>
+            <tr>
+                <th>Condition</th>
+                <th>|</th>
+                <th>works like an or operation</th>
+            </tr>
+        </table>
+        <br>
+        <table border="1">
+            <tr>
+                <th colspan="3">Command Options</th>
+            </tr>
+            <tr>
+                <th>Command</th>
+                <th>What does it do?</th>
+            </tr>
+            <tr>
+                <th>-c</th>
+                <th>count lines</th>
+            </tr>
+            <tr>
+                <th>-i</th>
+                <th>ignore case sensitive</th>
+            </tr>
+            <tr>
+                <th>-n</th>
+                <th>show each line numbers</th>
+            </tr>
+            <tr>
+                <th>-v</th>
+                <th>reverse engine to find</th>
+            </tr>
+            <tr>
+                <th>-w</th>
+                <th>looking for a word, instead of pattern</th>
+            </tr>
+        </table>
+        <p>Nothing or anything in between .*</p>
+        <p>Example -w looking for a word "is", "This" can't be include as a word although it contains the pattern "is"</p>
+
+        <p>The difference between grep & egrep are egrep knows the instruction in most of the special character. Where grep needs to specify as a instruction or a character</p>
+        <pre><code class="language-cpp">
+            grep & egrep
+
+            Example 🔰
+
+            grep "n+B" a.txt
+            - We are looking for the 3 characters exactly looks like "n+B"
+
+            grep "n\+B" a.txt
+            - In this case, we are looking for "n" characters that can be appear 1 or more times, and the following up chracter has to be "B"
+            - Ex. nnnnnnnB, nnB, nB
+
+            egrep "n+B" a.txt
+            - egrep command doesn't need a "\" backslash to specify as a instruction (extended regular expression).
+            - it works the same as grep "n\+B" a.txt
+
+            egrep "n{1,}B" a.txt
+            - the + sign is the same meaning as how many occurrence on previous character. + is equal to {1,}
+            - the other sign ? is equal to {0,1}. Means it is zero or 1 occurrence of the previous character
+        </code></pre>
+    </div>
+
+    <div>
+        <h3>Practice problem - fruit.txt</h3>
+        <pre><code class="language-cpp">
+            Create a document called "fruit.txt". Each column represent sets of information. Column 1 represent FruitName, 2 represent Price, 3 represent InStock(Yes/No), 4 represent Provider name 
+
+            FruitName Price InStocks Provider
+            Apple 1.00 Y Zoom
+            Orange 2.50 Y Zoom
+            Banana 0.50 Y Wifi
+            Strawberry 3.00 Y Garden
+            Pear 5.00 N Garden
+            Garden 50.00 N Yard
+            Flower 34.5 Y Friday
+            Flys 26.00 Y Friday
+            Fungi 3.94 Y Yard
+            giggi 0.00 N Yard
+
+            Questions:
+            1. Print all the line of results
+            2. Print all line result only provider is “Garden”
+            3. Print the reverse result on Q2.
+            4. Print all line result, only want the third character letter as “A” or “a”
+            5. Print the reverse result on Q4. (use other method – Q2)
+            6. Print all line result starts with letter F and G (upper and lower cases).
+            7. Print all line result without “Fungi” and “giggi” (use grep or egrep) 
+            8. Print all the line of results. (Bonus: print without those title – FruitName … Provider)
+
+            ===========================================================================================
+            
+            Create a document called "mix.txt"
+
+            3.141592654
+            ---2.237
+            ++++++++++++++++6743
+            -65
+            +94123.425
+            w84px
+            a5050
+            R2F4
+            RRR4
+            Toyota 1.+3
+            Corolla 2.-4
+            Typhoon.5.43
+            Regular.123.95
+            I like high places
+            Victor is higher than Viktor
+            higher higher higher
+            high vs short
+
+            Questions:
+            1.	display line that contains the word “high”
+            2.	display line that contains the pattern “high”
+            3.	display line that start with a number
+            4.	display line that end with a letter(upper or lower) or numbers
+            5.	display line that start with a letter(upper or lower) and end with a number
+            6.	display line that have at least have 3 numbers stick together
+            7.	display line that have at least 1 letter(upper or lower) at the beginning
+            8.	display line that have exact 6 character as a word at the beginning
+
+
+        </code></pre>        
+    </div>
+
+    <br>
+    <br>
+    <div>
+        <h3>Practice problem - Answer</h3>
+        <pre><code class="language-cpp">
+            1.cat fruit.txt 
+            2.grep “Garden$” fruit.txt	
+            3.grep –v “Garden$” fruit.txt
+            4.grep “^..[aA]” fruit.txt
+            5.grep “^..[^aA]” fruit.txt
+            6.grep “^[FfGg]” fruit.txt
+            7.grep –iv “…gi” fruit.txt OR grep –iv “Fungi|giggi” fruit.txt OR egrep –iv “Fungi|giggi” fruit.txt
+            8.cat fruit.txt | grep –v “FruitName” (OR tail –n +2) –n number of lines, +2 start from the 2nd line
+
+            1.egrep –w “high” mix.txt
+            2.egrep “high” mix.txt
+            3.egrep “^[0-9]” mix.txt
+            4.egrep “[a-zA-Z0-9]$” mix.txt
+            5.egrep “^[a-zA-Z].*[0-9]$” mix.txt VS egrep “^[a-zA-Z]*[0-9]$” mix.txt (RRR4)
+            6.egrep “[0-9] [0-9] [0-9]” mix.txt (this is exactly 3) egrep "[0-9]{3,}" mix.txt
+            7.egrep “^[a-zA-Z]+” mix.txt or egrep “^[a-zA-Z]{1,}” mix.txt
+            8.egrep –w “^[a-zA-Z]{6,6}” mix.txt
+        </code></pre>
+    </div>
+
+    <a href="./ULI101.html">Back</a>
+    <script>Prism.highlightAll();</script>
+</body>
+</html>
